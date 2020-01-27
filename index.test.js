@@ -11,11 +11,11 @@ test('register route', async () => {
     expect(res.body.username).toBe('Ian')
 })
 
-// test('login route', async () => {
-//     const res = await supertest(server)
-//         .post('/api/auth/login')
-//         .send({ username: 'Ian', password: '123' })
-//     expect(res.status).toBe(200)
-//     expect(res.type).toBe('application/json')
-//     expect(res.body.message).toEqual('welcome Ian')
-// })
+test('login route', async () => {
+    const res = await supertest(server)
+        .post('/api/auth/login')
+        .send({ username: 'Ian', password: '123' })
+    expect(res.status).toBe(200)
+    expect(res.type).toBe('application/json')
+    expect(res.body.message).toEqual('welcome Ian')
+})
